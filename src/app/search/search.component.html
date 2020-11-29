@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <h2>Search</h2>
     <form class="example-form" [formGroup]="myForm">
         <mat-form-field class="example-full-width">
@@ -10,7 +10,7 @@
                  name="city"
                  [matAutocomplete]="auto">
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="onSelectLocation(option)">
               {{option}}
             </mat-option>
           </mat-autocomplete>

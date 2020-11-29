@@ -1,2 +1,7 @@
-Search
-<wap-search></wap-search>
+<div style="width:100%">
+    <wap-search (weatherLocation)="searchWeatherLocation($event)"></wap-search>
+</div>
+<div>
+    <wap-results [weatherData]="weatherData"></wap-results>
+</div>
+

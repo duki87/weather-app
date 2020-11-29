@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../_services/weather.service';
+import { WeatherNowRes } from './models/weatherNowRes';
 
 @Component({
   selector: 'wap-weather',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _weatherService: WeatherService) { }
+
+  weatherData: WeatherNowRes;
 
   ngOnInit(): void {
+
   }
 
   getUserLocation() {
@@ -18,6 +23,17 @@ export class WeatherComponent implements OnInit {
       // this.lat = position.coords.latitude; 
       // this.lon = position.coords.longitude;
     });    
+  }
+
+  getWeatherByCity(weatherLocation) {
+    return this._weatherService.weatherNow({ city: weatherLocation })
+      .subscribe((res: WeatherNowRes) => {
+        this.weatherData = res;
+      })
+  }
+
+  searchWeatherLocation(location) {
+    return this.getWeatherByCity(location);
   }
 
 }
