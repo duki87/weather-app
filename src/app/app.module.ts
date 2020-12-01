@@ -9,7 +9,8 @@ import { NavComponent } from './includes/nav/nav.component';
 //Material
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatAutocompleteModule } from '@angular/material/autocomplete'; 
-import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';  
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatAutocompleteModule,
     MatFormFieldModule,
+    MatSidenavModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
