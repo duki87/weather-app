@@ -1,15 +1,36 @@
 <mat-sidenav-container class="example-container" *ngIf="shouldRun">
-  <mat-sidenav  class="example-sidenav" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+  <mat-sidenav class="example-sidenav bg-primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                (closed)="events.push('close!')">
-    Sidenav content
+    <button *ngIf="opened" mat-icon-button color="accent" (click)="sidenav.toggle()"><span class="material-icons">close</span></button>
+    <mat-nav-list>
+      <mat-list-item>
+        <a matLine href="..." [routerLink]="'/'">Home</a>
+        <button mat-icon-button >
+          <span class="material-icons">home</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <a matLine href="..." [routerLink]="'/weather'">Weather</a>
+        <button mat-icon-button >
+          <span class="material-icons">cloud</span>
+        </button>
+      </mat-list-item>
+
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <div class="container topbar bg-dark" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" style="padding: 10px 0 10px"> 
+        <div class="item item-1">
+          <button *ngIf="!opened" mat-icon-button color="accent" (click)="sidenav.toggle()"><span class="material-icons">menu</span></button>
+        </div>
+
+        <div class="item item-2">
+          <h3 style="margin-bottom: 0px !important;"><strong>WEATHER APP</strong></h3>
+        </div>  
+    </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
-
-

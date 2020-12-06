@@ -1,0 +1,112 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$oa-primary: (
+    50 : #f0fafe,
+    100 : #d9f2fe,
+    200 : #c0eafd,
+    300 : #a7e1fc,
+    400 : #94dafb,
+    500 : #81d4fa,
+    600 : #79cff9,
+    700 : #6ec9f9,
+    800 : #64c3f8,
+    900 : #51b9f6,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #eef8ff,
+    A700 : #d4efff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$oa-accent: (
+    50 : #f6ffff,
+    100 : #e9ffff,
+    200 : #dbffff,
+    300 : #ccffff,
+    400 : #c1ffff,
+    500 : #b6ffff,
+    600 : #afffff,
+    700 : #a6ffff,
+    800 : #9effff,
+    900 : #8effff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$oa-dark: (
+    50 : #e9f4f8,
+    100 : #c9e3ee,
+    200 : #a5d1e3,
+    300 : #81bfd8,
+    400 : #66b1cf,
+    500 : #4ba3c7,
+    600 : #449bc1,
+    700 : #3b91ba,
+    800 : #3388b3,
+    900 : #2377a6,
+    A100 : #e3f4ff,
+    A200 : #b0e1ff,
+    A400 : #7dcdff,
+    A700 : #63c3ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$wap-app-primary: mat-palette($oa-primary, 700, 300, 900);
+$wap-app-accent:  mat-palette($oa-accent, 500, 400, 700);
+$wap-app-dark:  mat-palette($oa-dark);
+
+$wap-app-warn: mat-palette($mat-red);
+
+$wap-app-theme: mat-light-theme($wap-app-primary, $wap-app-accent, $wap-app-warn);
+
+@include angular-material-theme($wap-app-theme);
