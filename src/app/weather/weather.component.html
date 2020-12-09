@@ -1,6 +1,9 @@
-<div class="weather" style="width:100%">
-    <wap-search (weatherLocation)="searchWeatherLocation($event)"></wap-search>
-
-    <wap-results [weatherData]="weatherData"></wap-results>
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div class="item item-1">
+        <wap-search (weatherLocation)="searchWeatherLocation($event)"></wap-search>
+    </div>
+    <div class="item item-2">
+        <wap-results [weatherData]="weatherData"></wap-results>
+    </div>
 </div>
 

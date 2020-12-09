@@ -1,15 +1,15 @@
-<mat-sidenav-container class="example-container" *ngIf="shouldRun">
-  <mat-sidenav class="example-sidenav bg-primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+<mat-sidenav-container fxLayout="column" fxLayoutAlign="center stretch" class="sidenav-container" *ngIf="shouldRun">
+  <mat-sidenav class="sidenav bg-primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                (closed)="events.push('close!')">
-    <button *ngIf="opened" mat-icon-button color="accent" (click)="sidenav.toggle()"><span class="material-icons">close</span></button>
-    <mat-nav-list>
-      <mat-list-item>
+    <button mat-icon-button color="accent" (click)="sidenav.toggle()"><span class="material-icons">close</span></button>
+    <mat-nav-list fxLayout="column" fxLayoutAlign="start center">
+      <mat-list-item class="item item-1">
         <a matLine href="..." [routerLink]="'/'">Home</a>
         <button mat-icon-button >
           <span class="material-icons">home</span>
         </button>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item class="item item-2">
         <a matLine href="..." [routerLink]="'/weather'">Weather</a>
         <button mat-icon-button >
           <span class="material-icons">cloud</span>
@@ -29,7 +29,11 @@
           <h3 style="margin-bottom: 0px !important;"><strong>WEATHER APP</strong></h3>
         </div>  
     </div>
-    <router-outlet></router-outlet>
+    <div fxLayout="row">
+      <div fxFlex="100">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

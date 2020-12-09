@@ -14,11 +14,16 @@
     border: 1px solid #555;
 }
 
-.example-sidenav {
+.sidenav {
   width: 300px;
   padding: 20px;
 }
 
 .topbar {
   height: 60px !important;
+}
+
+.sidenav-container {
+  height: 100%;
+  width:100%;
 }
